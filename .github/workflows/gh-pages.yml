@@ -21,20 +21,20 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Get pnpm cache
-        id: pnpm-cache
-        run: echo "::set-output name=dir::$(pnpm store path)"
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
-          path: ${{ steps.pnpm-cache.outputs.dir }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-
+            ${{ runner.os }}-yarn-
 
-      - run: pnpm install
-      - run: pnpm build
+      - run: yarn
+      - run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
