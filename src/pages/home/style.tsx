@@ -61,12 +61,11 @@ export const SubTitle = styled.h2`
 `;
 
 export const CoverBox = styled.div`
+  position: relative;
   margin: 17px auto 0;
+  padding: 30px 25px;
   max-width: 1300px;
   height: 560px;
-  top: 214px;
-  left: 70px;
-  gap: 0px;
   border-radius: 36px;
   border: 1.5px;
   opacity: 0px;
@@ -90,6 +89,8 @@ export const SelectorBox = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  z-index: 99;
 `;
 
 export const CoverOption = styled.div`

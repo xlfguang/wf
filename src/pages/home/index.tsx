@@ -21,6 +21,7 @@ import leftImg from "@/assets/left.png";
 import rightImg from "@/assets/right.png";
 import Selector from "./components/Selector";
 import logo from "@/assets/logo.png";
+import Cover from "./components/Cover";
 const Home = () => {
   return (
     <HomeBody>
@@ -41,6 +42,7 @@ const Home = () => {
           </SelectorBox>
           <DownloadBtn>Download</DownloadBtn>
         </CoverOption>
+        <Cover></Cover>
       </CoverBox>
       <NavBar>
         <NavLogo />
