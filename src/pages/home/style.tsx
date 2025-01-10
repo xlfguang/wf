@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const HomeBody = styled.div`
-  width: 100vw;
-  height: 100vh;
   background: linear-gradient(180deg, #070d16 11.07%, #0d1a21 100%);
 
   @media (max-width: 768px) {
@@ -120,7 +118,8 @@ export const DownloadBtn = styled.button`
     #fcf605 59.22%,
     #45f836 107.82%
   );
-
+  position: relative;
+  z-index: 2;
   @media (max-width: 768px) {
     width: 100%;
     padding: 10px 0;
@@ -147,7 +146,10 @@ export const NavBar = styled.div`
   }
 `;
 
-export const NavLogo = styled.img``;
+export const NavLogo = styled.img`
+  width: 56px;
+  height: 56px;
+`;
 
 export const NavList = styled.div`
   display: flex;
@@ -202,4 +204,15 @@ export const RegisterBtn = styled.button`
     width: 100%;
     padding: 10px 0;
   }
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  max-width: 1290px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: #ffffff99;
+  height: 60px;
 `;

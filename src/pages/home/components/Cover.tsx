@@ -4,6 +4,8 @@ import coverbg from "@/assets/cover-bg.png";
 import ARtheway from "@/assets/ARtheway.png";
 import ARright from "@/assets/ARright.png";
 import ARleft from "@/assets/ARleft.png";
+import ARcar1 from "@/assets/ARcar1.png";
+
 const CoverBackground = styled.div`
   position: absolute;
   top: 30px;
@@ -109,6 +111,44 @@ const ARleftImg = styled.div`
   background-size: cover;
   animation: ${ARleftAnimation} 4s;
 `;
+const ARcar1Img = styled.div`
+  position: absolute;
+  width: 264px;
+  height: 219px;
+  background: url(${ARcar1}) no-repeat 100% 100%;
+  background-size: cover;
+  top: 228px;
+  left: 145px;
+  animation: ${ScanAnimation} 4s;
+`;
+const ARcar2Img = styled.div`
+  width: 119px;
+  height: 112px;
+  top: 305px;
+  left: 694px;
+  position: absolute;
+  border: 1px solid #14cbd3;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 247, 255, 0.3) 2.55%,
+    rgba(0, 246, 255, 0) 93.69%
+  );
+  animation: ${ScanAnimation} 4s;
+`;
+const ARcar3Img = styled.div`
+  width: 87px;
+  height: 76px;
+  top: 318px;
+  left: 452px;
+  position: absolute;
+  border: 1px solid #14cbd3;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 247, 255, 0.3) 2.55%,
+    rgba(0, 246, 255, 0) 93.69%
+  );
+  animation: ${ScanAnimation} 4s;
+`;
 
 function Cover() {
   return (
@@ -116,6 +156,9 @@ function Cover() {
       <ARthewayImg src={ARtheway} />
       <ARrightImg />
       <ARleftImg />
+      <ARcar1Img />
+      <ARcar2Img />
+      <ARcar3Img />
       <ScanContainer></ScanContainer>
     </CoverBackground>
   );

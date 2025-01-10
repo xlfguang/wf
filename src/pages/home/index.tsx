@@ -3,6 +3,7 @@ import {
   CoverBox,
   CoverOption,
   DownloadBtn,
+  Footer,
   HomeBody,
   LeftImg,
   LoginBtn,
@@ -21,6 +22,7 @@ import leftImg from "@/assets/left.png";
 import rightImg from "@/assets/right.png";
 import Selector from "./components/Selector";
 import logo from "@/assets/logo.png";
+import logo2 from "@/assets/logo2.png";
 import Cover from "./components/Cover";
 const Home = () => {
   return (
@@ -45,7 +47,7 @@ const Home = () => {
         <Cover></Cover>
       </CoverBox>
       <NavBar>
-        <NavLogo />
+        <NavLogo src={logo2} />
         <NavList>
           <NavItem>HOME</NavItem>
           <NavItem
@@ -69,6 +71,7 @@ const Home = () => {
           <RegisterBtn>Sign Up</RegisterBtn>
         </BtnBox>
       </NavBar>
+      <Footer>Model forge © All Rights Rserved</Footer>
     </HomeBody>
   );
 };
