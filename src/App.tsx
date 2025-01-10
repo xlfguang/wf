@@ -4,7 +4,7 @@ import Home from "@/pages/home/index";
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/wf">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
