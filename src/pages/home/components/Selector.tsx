@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import arrowIcon from "@/assets/arrow.png";
+
 const SelectorContainer = styled.div`
   position: relative;
   width: 168px;
@@ -50,6 +51,7 @@ const Icon = styled.img`
   height: 20px;
   margin-right: 10px;
 `;
+
 const ArrowIcon = styled.img<{
   isOpen: boolean;
 }>`
@@ -71,6 +73,24 @@ const Selector = () => {
     { name: "Lexus", icon: "/path/to/lexus.png" },
   ];
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleSelect = (name: string) => {
@@ -79,7 +99,7 @@ const Selector = () => {
   };
 
   return (
-    <SelectorContainer>
+    <SelectorContainer ref={dropdownRef}>
       <SelectedItem onClick={toggleDropdown}>
         <span>{selected}</span>
         <ArrowIcon src={arrowIcon} isOpen={isOpen} />
