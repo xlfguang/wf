@@ -47,14 +47,26 @@ const Home = () => {
       <NavBar>
         <NavLogo />
         <NavList>
-          <NavItem>Tab</NavItem>
-          <NavItem>DOCS</NavItem>
-          <NavItem>GITHUB</NavItem>
-          <NavItem>X</NavItem>
+          <NavItem>HOME</NavItem>
+          <NavItem
+            href="https://modelforge-1.gitbook.io/modelforge-docs"
+            target="_blank"
+          >
+            DOCS
+          </NavItem>
+          <NavItem
+            href="https://github.com/Exversito/Model-Forge"
+            target="_blank"
+          >
+            GITHUB
+          </NavItem>
+          <NavItem href="https://x.com/ModelForgeai" target="_blank">
+            X
+          </NavItem>
         </NavList>
         <BtnBox>
           <LoginBtn>Login</LoginBtn>
-          <RegisterBtn>Register</RegisterBtn>
+          <RegisterBtn>Sign Up</RegisterBtn>
         </BtnBox>
       </NavBar>
     </HomeBody>
