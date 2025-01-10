@@ -4,7 +4,7 @@ import {
   CoverOption,
   DownloadBtn,
   Footer,
-  HomeBody,
+  Body,
   LeftImg,
   LoginBtn,
   Logo,
@@ -24,12 +24,18 @@ import Selector from "./components/Selector";
 import logo from "@/assets/logo.png";
 import logo2 from "@/assets/logo2.png";
 import Cover from "./components/Cover";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
+
+  const toLogin = () => {
+    navigate("/login");
+  };
   return (
-    <HomeBody>
+    <Body>
       <LeftImg src={leftImg} />
       <RightImg src={rightImg} />
-      <PageTitle>Model forge：The Future of Driver Assistance</PageTitle>
+      <PageTitle>Model Forge：The Future of Driver Assistance</PageTitle>
       <SubTitle>
         We are entering a new milestone. ModelForge is building the foundation
         for AI-assisted and fully autonomous driving.
@@ -67,12 +73,12 @@ const Home = () => {
           </NavItem>
         </NavList>
         <BtnBox>
-          <LoginBtn>Login</LoginBtn>
-          <RegisterBtn>Sign Up</RegisterBtn>
+          <LoginBtn onClick={toLogin}>Login</LoginBtn>
+          <RegisterBtn onClick={toLogin}>Sign Up</RegisterBtn>
         </BtnBox>
       </NavBar>
       <Footer>Model forge © All Rights Rserved</Footer>
-    </HomeBody>
+    </Body>
   );
 };
 

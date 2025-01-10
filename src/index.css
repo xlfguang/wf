@@ -9,8 +9,9 @@ html,
 body {
   height: 100%;
   font-family: Arial, sans-serif;
-  line-height: 1.5;
   color: #333;
+  background: linear-gradient(180deg, #070d16 11.07%, #0d1a21 100%);
+
 }
 
 /* Remove list styles */

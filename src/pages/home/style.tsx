@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const HomeBody = styled.div`
-  background: linear-gradient(180deg, #070d16 11.07%, #0d1a21 100%);
-
+export const Body = styled.div`
   @media (max-width: 768px) {
     height: auto;
     padding: 20px;
