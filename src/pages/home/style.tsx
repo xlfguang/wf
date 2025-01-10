@@ -160,8 +160,10 @@ export const NavList = styled.div`
   }
 `;
 
-export const NavItem = styled.div`
+export const NavItem = styled.a`
   color: #ffffff66;
+  font-weight: 500;
+  cursor: pointer;
 `;
 
 export const BtnBox = styled.div`

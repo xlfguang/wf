@@ -2,6 +2,8 @@ import styled, { keyframes } from "styled-components";
 
 import coverbg from "@/assets/cover-bg.png";
 import ARtheway from "@/assets/ARtheway.png";
+import ARright from "@/assets/ARright.png";
+import ARleft from "@/assets/ARleft.png";
 const CoverBackground = styled.div`
   position: absolute;
   top: 30px;
@@ -46,6 +48,28 @@ const ScanAnimation = keyframes`
     opacity: 1;
   }
 `;
+const ARrightAnimation = keyframes`
+  0% {
+    height: 0px;
+  }
+  80%{
+    height: 0px;
+  }
+  100% {
+    height: 467px;
+  }
+`;
+const ARleftAnimation = keyframes`
+  0% {
+    width: 0px;
+  }
+  80%{
+    width: 0px;
+  }
+  100% {
+    width: 545px;
+  }
+`;
 
 const ScanContainer = styled.div`
   position: absolute;
@@ -66,11 +90,32 @@ const ARthewayImg = styled.img`
   left: 368px;
   animation: ${ScanAnimation} 4s;
 `;
+const ARrightImg = styled.div`
+  position: absolute;
+  width: 382px;
+  height: 467px;
+  right: 0px;
+  background: url(${ARright});
+  background-size: cover;
+  animation: ${ARrightAnimation} 4s;
+`;
+
+const ARleftImg = styled.div`
+  position: absolute;
+  width: 545px;
+  height: 418px;
+  left: 0px;
+  background: url(${ARleft});
+  background-size: cover;
+  animation: ${ARleftAnimation} 4s;
+`;
 
 function Cover() {
   return (
     <CoverBackground>
       <ARthewayImg src={ARtheway} />
+      <ARrightImg />
+      <ARleftImg />
       <ScanContainer></ScanContainer>
     </CoverBackground>
   );
